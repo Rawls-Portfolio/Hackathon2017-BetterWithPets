@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
@@ -14,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var tappableBackgroundView: UIView!
+    @IBOutlet weak var fbLoginContainer: UIView!
     
     // MARK: - View Cycle Functions
     override func viewDidLoad() {
@@ -21,9 +25,9 @@ class LoginViewController: UIViewController {
         nameTextField.delegate = self
         passwordTextField.delegate = self
         configureTappableBackground()
+        configureFacebookLogin()
         
     }
-    
     
     // MARK: - IBActions
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
@@ -31,6 +35,20 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Methods
+    func configureFacebookLogin() {
+        // check for existing log in
+        if (FBSDKAccessToken.current() == nil) {
+            // continue to next screen
+        }
+        
+        // configure button
+        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
+        loginButton.center = fbLoginContainer.center
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        
+    }
+    
     func configureTappableBackground() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         tappableBackgroundView.addGestureRecognizer(tapGestureRecognizer)
@@ -60,5 +78,15 @@ extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tappableBackgroundView.isHidden = false
+    }
+}
+
+// MARK: - LoginButtonDelegate Methods
+extension LoginViewController: LoginButtonDelegate {
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        // continue to next screen
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
     }
 }

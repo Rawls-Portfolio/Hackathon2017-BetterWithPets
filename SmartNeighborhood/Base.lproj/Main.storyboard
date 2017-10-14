@@ -46,6 +46,14 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgy-mX-G1y" userLabel="Facebook Login Container">
+                                <rect key="frame" x="67" y="368" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4Vi-C3-NGp"/>
+                                    <constraint firstAttribute="width" constant="240" id="g3L-vX-qRC"/>
+                                </constraints>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-tV-gO2" userLabel="Tappable Background">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -81,7 +89,9 @@
                             <constraint firstItem="QWw-tV-gO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FFg-SM-dXT"/>
                             <constraint firstItem="csT-EX-a2c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ma6-mm-UHe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerX" secondItem="eXX-1i-0fp" secondAttribute="trailing" constant="-130" id="V6D-6q-OAc"/>
+                            <constraint firstItem="hgy-mX-G1y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="avD-Vf-oaC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QWw-tV-gO2" secondAttribute="trailing" id="ceJ-Ot-hVh"/>
+                            <constraint firstItem="hgy-mX-G1y" firstAttribute="top" secondItem="csT-EX-a2c" secondAttribute="bottom" constant="20" id="j8t-WU-jfs"/>
                             <constraint firstItem="csT-EX-a2c" firstAttribute="top" secondItem="HV1-eh-w03" secondAttribute="bottom" constant="3" id="nR2-Qx-5oF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QWw-tV-gO2" secondAttribute="bottom" id="qlt-mK-jrJ"/>
                             <constraint firstItem="QWw-tV-gO2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s2l-k9-whX"/>
@@ -90,14 +100,50 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="fbLoginContainer" destination="hgy-mX-G1y" id="2mc-GL-gma"/>
                         <outlet property="nameTextField" destination="6KA-xg-Enn" id="pNS-8a-uis"/>
                         <outlet property="passwordTextField" destination="MBq-lm-VrX" id="JWF-t9-JXu"/>
                         <outlet property="tappableBackgroundView" destination="QWw-tV-gO2" id="4Ss-Wt-DG0"/>
+                        <segue destination="hri-Ys-mjA" kind="show" identifier="ShowHome" id="K4L-Ma-aj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vT2-Ef-07T">
+            <objects>
+                <viewController id="peU-Dm-7gd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfC-aU-lzk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="qYw-N9-u74"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mAw-E2-GnL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12J-QR-1E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fEX-vR-XFU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hri-Ys-mjA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hil-BQ-mZR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="peU-Dm-7gd" kind="relationship" relationship="rootViewController" id="a31-Hi-3BN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POS-4d-nUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="117"/>
         </scene>
     </scenes>
 </document>
