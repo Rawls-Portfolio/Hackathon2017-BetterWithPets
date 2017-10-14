@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EC1F924F8E00276BFB /* HomeViewController.swift */; };
+		371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EE1F92640E00276BFB /* UserModel.swift */; };
 		37309BE51F91C1D900DE9036 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37309BE41F91C1D900DE9036 /* AppDelegate.swift */; };
 		37309BEA1F91C1D900DE9036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37309BE81F91C1D900DE9036 /* Main.storyboard */; };
 		37309BEC1F91C1D900DE9036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37309BEB1F91C1D900DE9036 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		371AE8EC1F924F8E00276BFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		371AE8EE1F92640E00276BFB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		37309BE11F91C1D900DE9036 /* SmartNeighborhood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartNeighborhood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37309BE41F91C1D900DE9036 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37309BE91F91C1D900DE9036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				37309BE81F91C1D900DE9036 /* Main.storyboard */,
 				37309BEB1F91C1D900DE9036 /* Assets.xcassets */,
 				37309BF61F91C41800DE9036 /* LoginViewController.swift */,
+				371AE8EE1F92640E00276BFB /* UserModel.swift */,
 				371AE8EC1F924F8E00276BFB /* HomeViewController.swift */,
 				37309BED1F91C1D900DE9036 /* LaunchScreen.storyboard */,
 				37309BF01F91C1D900DE9036 /* Info.plist */,
@@ -214,6 +217,7 @@
 			files = (
 				37309BF71F91C41800DE9036 /* LoginViewController.swift in Sources */,
 				37309BE51F91C1D900DE9036 /* AppDelegate.swift in Sources */,
+				371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */,
 				371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

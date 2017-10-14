@@ -12,7 +12,10 @@ import FacebookLogin
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    var user: String?
+    
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -26,9 +29,22 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         configureTappableBackground()
         configureFacebookLogin()
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(#function)
+        super.prepare(for: segue, sender: sender)
+        
+        if let name = user, let navControl = segue.destination as? UINavigationController,
+            let vc = navControl.topViewController as? HomeViewController {
+            vc.model = UserModel(user: name)
+            nameTextField.text = ""
+            nameTextField.placeholder = "name"
+            passwordTextField.text = ""
+            passwordTextField.placeholder = "password"
+        }
+    }
+
     // MARK: - IBActions
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
         validateUser()
@@ -37,8 +53,8 @@ class LoginViewController: UIViewController {
     // MARK: - Methods
     func configureFacebookLogin() {
         // check for existing log in
-        if (FBSDKAccessToken.current() == nil) {
-            // continue to next screen
+        if (FBSDKAccessToken.current() != nil) {
+            validateUser()
         }
         
         // configure button
@@ -62,12 +78,25 @@ class LoginViewController: UIViewController {
     }
     
     func validateUser(){ // TODO
-        // validate user name
-        // validate password
-        // if invalid, set (on screen, not popup, flash fields)
-        // if valid, continue to next screen
+        if let name = nameTextField.text, let _ = passwordTextField.text {
+            // validate user and password against database
+            // if invalid, set (on screen, not popup, flash fields), return
+            user = name
+        } else if let id = FBSDKAccessToken.current().userID {
+                // validate user against database
+                // if facebook is not registered
+                    //register
+                user = id
+        } else {
+            return
+        }
+        
+        performSegue(withIdentifier: "ShowHome", sender: nil)
     }
+    
 }
+
+
 // MARK: - UITextField Delegate Methods
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -84,9 +113,11 @@ extension LoginViewController: UITextFieldDelegate {
 // MARK: - LoginButtonDelegate Methods
 extension LoginViewController: LoginButtonDelegate {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        // continue to next screen
+        validateUser()
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        // ensure user is completely logged out of the system
     }
 }
+
