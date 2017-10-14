@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -120,41 +119,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhz-5E-B4s" userLabel="1stSegment">
-                                <rect key="frame" x="0.0" y="64" width="375" height="151"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBL-VD-9Ta" userLabel="2ndSegment">
-                                <rect key="frame" x="0.0" y="215" width="375" height="151"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52y-As-8YI" userLabel="3rdSegment">
-                                <rect key="frame" x="0.0" y="366" width="375" height="151"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-9C-uZj" userLabel="4thSegment">
-                                <rect key="frame" x="0.0" y="517" width="375" height="151"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBL-VD-9Ta" userLabel="MapContainer">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="52y-As-8YI" firstAttribute="height" secondItem="qYw-N9-u74" secondAttribute="height" multiplier="0.25" id="5AY-6m-4qc"/>
                             <constraint firstItem="eBL-VD-9Ta" firstAttribute="trailing" secondItem="qYw-N9-u74" secondAttribute="trailing" id="72k-vB-3Da"/>
-                            <constraint firstItem="fqy-9C-uZj" firstAttribute="trailing" secondItem="qYw-N9-u74" secondAttribute="trailing" id="A9h-Ix-pD2"/>
-                            <constraint firstItem="fqy-9C-uZj" firstAttribute="height" secondItem="qYw-N9-u74" secondAttribute="height" multiplier="0.25" id="C1d-G0-GmV"/>
-                            <constraint firstItem="fqy-9C-uZj" firstAttribute="top" secondItem="52y-As-8YI" secondAttribute="bottom" id="Dj3-Uq-YmX"/>
-                            <constraint firstItem="qYw-N9-u74" firstAttribute="trailing" secondItem="Hhz-5E-B4s" secondAttribute="trailing" id="HJE-oX-iOv"/>
-                            <constraint firstItem="52y-As-8YI" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="Kc6-Gh-A26"/>
-                            <constraint firstItem="eBL-VD-9Ta" firstAttribute="height" secondItem="qYw-N9-u74" secondAttribute="height" multiplier="0.25" id="NcM-Ya-c6Z"/>
-                            <constraint firstItem="Hhz-5E-B4s" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="O8w-2h-XDY"/>
-                            <constraint firstItem="Hhz-5E-B4s" firstAttribute="height" secondItem="qYw-N9-u74" secondAttribute="height" multiplier="0.25" id="QiG-6X-TFS"/>
-                            <constraint firstItem="eBL-VD-9Ta" firstAttribute="top" secondItem="Hhz-5E-B4s" secondAttribute="bottom" id="Wrb-0j-C3n"/>
-                            <constraint firstItem="52y-As-8YI" firstAttribute="trailing" secondItem="qYw-N9-u74" secondAttribute="trailing" id="am8-Zj-FbX"/>
-                            <constraint firstItem="fqy-9C-uZj" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="eiM-hE-TJD"/>
+                            <constraint firstItem="eBL-VD-9Ta" firstAttribute="top" secondItem="qYw-N9-u74" secondAttribute="top" id="aqk-Ia-481"/>
+                            <constraint firstItem="qYw-N9-u74" firstAttribute="bottom" secondItem="eBL-VD-9Ta" secondAttribute="bottom" id="jGb-YL-tI4"/>
                             <constraint firstItem="eBL-VD-9Ta" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="lQa-Ri-2hn"/>
-                            <constraint firstItem="52y-As-8YI" firstAttribute="top" secondItem="eBL-VD-9Ta" secondAttribute="bottom" id="lYi-mv-QQb"/>
-                            <constraint firstItem="Hhz-5E-B4s" firstAttribute="top" secondItem="qYw-N9-u74" secondAttribute="top" id="zYG-O0-FbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qYw-N9-u74"/>
                     </view>
@@ -170,6 +145,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapContainer" destination="eBL-VD-9Ta" id="kWc-VW-CXy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12J-QR-1E3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
