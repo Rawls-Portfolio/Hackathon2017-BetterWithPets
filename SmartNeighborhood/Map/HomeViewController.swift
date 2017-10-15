@@ -19,6 +19,10 @@ class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var mapContainer: UIView!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var activitiesLabel: UILabel!
+    @IBOutlet weak var eventsLabel: UILabel!
+    @IBOutlet weak var alertsLabel: UILabel!
     
     // MARK:- View Cycle Methods
     override func viewDidLoad() {
@@ -31,6 +35,15 @@ class HomeViewController: UIViewController {
         }
         mapVC.delegate = self
         addToStack(controller: mapVC, to: mapContainer)
+        
+        view.backgroundColor = UIColor(hex: "231F20")// dark gray
+        alertsLabel.textColor = UIColor(hex: "F7F7F7") // white
+        eventsLabel.textColor = UIColor(hex: "F7F7F7") // white
+        activitiesLabel.textColor = UIColor(hex: "F7F7F7") // white
+        logoutButton.tintColor = UIColor(hex: "FFD300") // yellow
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "231F20")// dark gray
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor(hex: "F7F7F7")] // white
+       
     }
     
     func addToStack(controller: UIViewController, to subview: UIView) {

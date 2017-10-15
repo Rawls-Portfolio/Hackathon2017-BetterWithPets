@@ -47,6 +47,7 @@
 		37309C021F91E06000DE9036 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37309BFD1F91E06000DE9036 /* FBSDKCoreKit.framework */; };
 		37309C041F91E07B00DE9036 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37309C031F91E07B00DE9036 /* FBSDKShareKit.framework */; };
 		37309C081F91E33300DE9036 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37309C071F91E33200DE9036 /* Bolts.framework */; };
+		3790DBFE1F93974500503C51 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 3790DBFD1F93974500503C51 /* style.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		37309C031F91E07B00DE9036 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Carthage/Build/iOS/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		37309C071F91E33200DE9036 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		37309C091F922AF100DE9036 /* SmartNeighborhood.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartNeighborhood.entitlements; sourceTree = "<group>"; };
+		3790DBFD1F93974500503C51 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		37309BD81F91C1D900DE9036 = {
 			isa = PBXGroup;
 			children = (
+				3790DBFD1F93974500503C51 /* style.json */,
 				37309BE31F91C1D900DE9036 /* SmartNeighborhood */,
 				37309BE21F91C1D900DE9036 /* Products */,
 				371AE8F01F92847800276BFB /* Google Frameworks */,
@@ -311,6 +314,7 @@
 				37309BEC1F91C1D900DE9036 /* Assets.xcassets in Resources */,
 				371AE91A1F92880A00276BFB /* GoogleMap.storyboard in Resources */,
 				371089BA1F93397B00FF1DD9 /* Carousel.storyboard in Resources */,
+				3790DBFE1F93974500503C51 /* style.json in Resources */,
 				37309BEA1F91C1D900DE9036 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

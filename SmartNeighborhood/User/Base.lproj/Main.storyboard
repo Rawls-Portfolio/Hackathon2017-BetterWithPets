@@ -276,6 +276,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activitiesLabel" destination="8qI-wq-dxq" id="ntf-1Y-2hL"/>
+                        <outlet property="alertsLabel" destination="E8e-2P-YD2" id="g7O-L2-qBj"/>
+                        <outlet property="eventsLabel" destination="LrG-vZ-H8a" id="4MY-Ke-CI2"/>
+                        <outlet property="logoutButton" destination="DrV-MJ-dbz" id="YPF-Gs-YFT"/>
                         <outlet property="mapContainer" destination="eBL-VD-9Ta" id="kWc-VW-CXy"/>
                     </connections>
                 </viewController>

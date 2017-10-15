@@ -57,6 +57,7 @@ class MarkerDetailViewController: UIViewController {
         titleTextField.delegate = self
         eventTextView.delegate = self
         
+        eventTypeControl.layer.cornerRadius = 4
         eventTypeControl.clipsToBounds = true
         
         view.backgroundColor = UIColor(hex: "231F20")// dark gray
@@ -77,7 +78,8 @@ class MarkerDetailViewController: UIViewController {
         cancelButton.tintColor = UIColor(hex: "FFD300") // yellow
         saveButton.tintColor = UIColor(hex: "FFD300") // yellow
         trashButton.tintColor = UIColor(hex: "FFD300") // yellow
-        
+        navigationController?.navigationBar.barTintColor = UIColor(hex: "231F20")// dark gray
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor(hex: "F7F7F7")] // white
         
         // if model exists, set title to Edit Marker
         if let existing = model {
