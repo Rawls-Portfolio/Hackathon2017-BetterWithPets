@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(#function)
         super.prepare(for: segue, sender: sender)
         
         if let name = user, let navControl = segue.destination as? UINavigationController,

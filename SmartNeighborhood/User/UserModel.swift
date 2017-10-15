@@ -10,8 +10,13 @@ import Foundation
 
 class UserModel {
     var user: String
+    private var markers = [MarkerModel]()
     
     init(user: String){
         self.user = user
+    }
+    
+    func add(_ model: MarkerModel){
+        markers.append(model)
     }
 }

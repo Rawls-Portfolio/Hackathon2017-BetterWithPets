@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371089B61F92B15100FF1DD9 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371089B51F92B15100FF1DD9 /* CustomMarker.swift */; };
 		371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EC1F924F8E00276BFB /* HomeViewController.swift */; };
 		371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EE1F92640E00276BFB /* UserModel.swift */; };
 		371AE8F81F92859800276BFB /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AE8F71F92859700276BFB /* GoogleMapsBase.framework */; };
@@ -29,6 +30,8 @@
 		371AE91A1F92880A00276BFB /* GoogleMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371AE9191F92880A00276BFB /* GoogleMap.storyboard */; };
 		371AE91C1F92882A00276BFB /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE91B1F92882A00276BFB /* MapsViewController.swift */; };
 		371AE91E1F928E3100276BFB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 371AE91D1F928DA400276BFB /* GoogleMaps.bundle */; };
+		371AE9201F92A4C300276BFB /* MarkerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE91F1F92A4C300276BFB /* MarkerDetailViewController.swift */; };
+		371AE9221F92A4FB00276BFB /* MarkerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE9211F92A4FB00276BFB /* MarkerModel.swift */; };
 		37309BE51F91C1D900DE9036 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37309BE41F91C1D900DE9036 /* AppDelegate.swift */; };
 		37309BEA1F91C1D900DE9036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37309BE81F91C1D900DE9036 /* Main.storyboard */; };
 		37309BEC1F91C1D900DE9036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37309BEB1F91C1D900DE9036 /* Assets.xcassets */; };
@@ -44,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371089B51F92B15100FF1DD9 /* CustomMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
 		371AE8EC1F924F8E00276BFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		371AE8EE1F92640E00276BFB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		371AE8F11F92848B00276BFB /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		371AE9191F92880A00276BFB /* GoogleMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoogleMap.storyboard; sourceTree = "<group>"; };
 		371AE91B1F92882A00276BFB /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		371AE91D1F928DA400276BFB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "GoogleMaps-2.4.0/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"; sourceTree = SOURCE_ROOT; };
+		371AE91F1F92A4C300276BFB /* MarkerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerDetailViewController.swift; sourceTree = "<group>"; };
+		371AE9211F92A4FB00276BFB /* MarkerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerModel.swift; sourceTree = "<group>"; };
 		37309BE11F91C1D900DE9036 /* SmartNeighborhood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartNeighborhood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37309BE41F91C1D900DE9036 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37309BE91F91C1D900DE9036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +139,29 @@
 			path = "Google Frameworks";
 			sourceTree = "<group>";
 		};
+		371AE9231F92A7D900276BFB /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				371AE9191F92880A00276BFB /* GoogleMap.storyboard */,
+				371AE8EC1F924F8E00276BFB /* HomeViewController.swift */,
+				371AE91B1F92882A00276BFB /* MapsViewController.swift */,
+				371089B51F92B15100FF1DD9 /* CustomMarker.swift */,
+				371AE9211F92A4FB00276BFB /* MarkerModel.swift */,
+				371AE91F1F92A4C300276BFB /* MarkerDetailViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		371AE9241F92A83600276BFB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				37309BE81F91C1D900DE9036 /* Main.storyboard */,
+				37309BF61F91C41800DE9036 /* LoginViewController.swift */,
+				371AE8EE1F92640E00276BFB /* UserModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		37309BD81F91C1D900DE9036 = {
 			isa = PBXGroup;
 			children = (
@@ -155,16 +184,12 @@
 			isa = PBXGroup;
 			children = (
 				37309C091F922AF100DE9036 /* SmartNeighborhood.entitlements */,
-				37309BE41F91C1D900DE9036 /* AppDelegate.swift */,
-				37309BE81F91C1D900DE9036 /* Main.storyboard */,
-				371AE9191F92880A00276BFB /* GoogleMap.storyboard */,
-				371AE91B1F92882A00276BFB /* MapsViewController.swift */,
 				37309BEB1F91C1D900DE9036 /* Assets.xcassets */,
-				37309BF61F91C41800DE9036 /* LoginViewController.swift */,
-				371AE8EE1F92640E00276BFB /* UserModel.swift */,
-				371AE8EC1F924F8E00276BFB /* HomeViewController.swift */,
 				37309BED1F91C1D900DE9036 /* LaunchScreen.storyboard */,
 				37309BF01F91C1D900DE9036 /* Info.plist */,
+				37309BE41F91C1D900DE9036 /* AppDelegate.swift */,
+				371AE9241F92A83600276BFB /* User */,
+				371AE9231F92A7D900276BFB /* Map */,
 			);
 			path = SmartNeighborhood;
 			sourceTree = "<group>";
@@ -312,8 +337,11 @@
 			files = (
 				371AE91C1F92882A00276BFB /* MapsViewController.swift in Sources */,
 				37309BF71F91C41800DE9036 /* LoginViewController.swift in Sources */,
+				371089B61F92B15100FF1DD9 /* CustomMarker.swift in Sources */,
 				37309BE51F91C1D900DE9036 /* AppDelegate.swift in Sources */,
 				371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */,
+				371AE9201F92A4C300276BFB /* MarkerDetailViewController.swift in Sources */,
+				371AE9221F92A4FB00276BFB /* MarkerModel.swift in Sources */,
 				371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

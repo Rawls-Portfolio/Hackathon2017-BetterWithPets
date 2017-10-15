@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         guard let mapVC = storyboard.instantiateInitialViewController() as? MapsViewController else {
             return
         }
-        //mapVC.delegate = self
+        mapVC.delegate = self
         addToStack(controller: mapVC, to: mapContainer)
     }
     
@@ -53,4 +53,13 @@ class HomeViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
    
+}
+
+// MARK:- Map View Delegate Methods
+extension HomeViewController: MapViewDelegate {
+    func save(_ markerModel: MarkerModel) {
+        model?.add(markerModel)
+    }
+    
+    
 }
