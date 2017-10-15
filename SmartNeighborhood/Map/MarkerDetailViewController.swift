@@ -22,13 +22,21 @@ class MarkerDetailViewController: UIViewController {
     weak var delegate: MarkerDetailViewDelegate?
     
     // MARK:- IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var eventTypeControl: UISegmentedControl!
+    @IBOutlet weak var eventTypeLabel: UILabel!
     @IBOutlet weak var isPrivateProperty: UISwitch!
+    @IBOutlet weak var eventDescLabel: UILabel!
     @IBOutlet weak var eventTextView: UITextView!
+    @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var tappableBackground: UIView!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var trashButton: UIBarButtonItem!
     
     //host interaction
     // NF func send/read message board
@@ -48,6 +56,28 @@ class MarkerDetailViewController: UIViewController {
         // configure delegates
         titleTextField.delegate = self
         eventTextView.delegate = self
+        
+        eventTypeControl.clipsToBounds = true
+        
+        view.backgroundColor = UIColor(hex: "231F20")// dark gray
+        titleLabel.textColor = UIColor(hex: "F7F7F7") // white
+        titleTextField.backgroundColor = UIColor(hex: "4D4D4D") // med gray
+        titleTextField.textColor = UIColor(hex: "F7F7F7") // white
+        eventTypeLabel.textColor = UIColor(hex: "F7F7F7") // white
+        eventDescLabel.textColor = UIColor(hex: "F7F7F7") // white
+        eventTextView.textColor = UIColor(hex: "F7F7F7") // white
+        eventTextView.backgroundColor = UIColor(hex: "4D4D4D") // med gray
+        startLabel.textColor = UIColor(hex: "F7F7F7") // white
+        endLabel.textColor = UIColor(hex: "F7F7F7") // white
+        isPrivateProperty.tintColor = UIColor(hex: "FFD300") // yellow
+        isPrivateProperty.onTintColor = UIColor(hex: "FFD300") // yellow
+        isPrivateProperty.thumbTintColor = UIColor(hex: "231F20")// dark gray
+        startDatePicker.backgroundColor = UIColor(hex: "F7F7F7") // white
+        endDatePicker.backgroundColor = UIColor(hex: "F7F7F7") // white
+        cancelButton.tintColor = UIColor(hex: "FFD300") // yellow
+        saveButton.tintColor = UIColor(hex: "FFD300") // yellow
+        trashButton.tintColor = UIColor(hex: "FFD300") // yellow
+        
         
         // if model exists, set title to Edit Marker
         if let existing = model {
@@ -73,6 +103,7 @@ class MarkerDetailViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backgroundTapped))
         tappableBackground.addGestureRecognizer(tapGestureRecognizer)
         tappableBackground.isHidden = true
+        tappableBackground.backgroundColor = UIColor.clear
         view.sendSubview(toBack: tappableBackground)
     }
     

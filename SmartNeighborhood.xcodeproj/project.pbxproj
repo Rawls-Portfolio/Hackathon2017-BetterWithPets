@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		371089B61F92B15100FF1DD9 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371089B51F92B15100FF1DD9 /* CustomMarker.swift */; };
+		371089B81F9333A000FF1DD9 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371089B71F9333A000FF1DD9 /* LandingViewController.swift */; };
+		371089BA1F93397B00FF1DD9 /* Carousel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371089B91F93397B00FF1DD9 /* Carousel.storyboard */; };
+		371089BC1F9339A400FF1DD9 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371089BB1F9339A400FF1DD9 /* CarouselViewController.swift */; };
 		371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EC1F924F8E00276BFB /* HomeViewController.swift */; };
 		371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371AE8EE1F92640E00276BFB /* UserModel.swift */; };
 		371AE8F81F92859800276BFB /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371AE8F71F92859700276BFB /* GoogleMapsBase.framework */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		371089B51F92B15100FF1DD9 /* CustomMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
+		371089B71F9333A000FF1DD9 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		371089B91F93397B00FF1DD9 /* Carousel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Carousel.storyboard; sourceTree = "<group>"; };
+		371089BB1F9339A400FF1DD9 /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		371AE8EC1F924F8E00276BFB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		371AE8EE1F92640E00276BFB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		371AE8F11F92848B00276BFB /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				37309BE81F91C1D900DE9036 /* Main.storyboard */,
+				371089B91F93397B00FF1DD9 /* Carousel.storyboard */,
+				371089BB1F9339A400FF1DD9 /* CarouselViewController.swift */,
+				371089B71F9333A000FF1DD9 /* LandingViewController.swift */,
 				37309BF61F91C41800DE9036 /* LoginViewController.swift */,
 				371AE8EE1F92640E00276BFB /* UserModel.swift */,
 			);
@@ -301,6 +310,7 @@
 				37309BEF1F91C1D900DE9036 /* LaunchScreen.storyboard in Resources */,
 				37309BEC1F91C1D900DE9036 /* Assets.xcassets in Resources */,
 				371AE91A1F92880A00276BFB /* GoogleMap.storyboard in Resources */,
+				371089BA1F93397B00FF1DD9 /* Carousel.storyboard in Resources */,
 				37309BEA1F91C1D900DE9036 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371089BC1F9339A400FF1DD9 /* CarouselViewController.swift in Sources */,
 				371AE91C1F92882A00276BFB /* MapsViewController.swift in Sources */,
 				37309BF71F91C41800DE9036 /* LoginViewController.swift in Sources */,
 				371089B61F92B15100FF1DD9 /* CustomMarker.swift in Sources */,
@@ -342,6 +353,7 @@
 				371AE8EF1F92640E00276BFB /* UserModel.swift in Sources */,
 				371AE9201F92A4C300276BFB /* MarkerDetailViewController.swift in Sources */,
 				371AE9221F92A4FB00276BFB /* MarkerModel.swift in Sources */,
+				371089B81F9333A000FF1DD9 /* LandingViewController.swift in Sources */,
 				371AE8ED1F924F8E00276BFB /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

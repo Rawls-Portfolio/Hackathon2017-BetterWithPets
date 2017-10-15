@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WQh-km-hQV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Carousel View Controller-->
+        <scene sceneID="94z-Wm-xbr">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="WQh-km-hQV" customClass="CarouselViewController" customModule="SmartNeighborhood" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5b-0w-ob0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="206"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aV4-aj-ldY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ak9-lV-jPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="GreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hT0-OV-mOt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pnh-uB-elE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="K9" translatesAutoresizingMaskIntoConstraints="NO" id="aN0-8l-r9I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aN0-8l-r9I" firstAttribute="top" secondItem="Pnh-uB-elE" secondAttribute="top" id="GP6-hz-jpG"/>
+                            <constraint firstAttribute="bottom" secondItem="aN0-8l-r9I" secondAttribute="bottom" id="R6G-ba-qnq"/>
+                            <constraint firstAttribute="trailing" secondItem="aN0-8l-r9I" secondAttribute="trailing" id="fjd-PT-VcA"/>
+                            <constraint firstItem="aN0-8l-r9I" firstAttribute="leading" secondItem="Pnh-uB-elE" secondAttribute="leading" id="l06-E6-SAO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AXy-1S-HXr"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="674" y="-484"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xA1-tX-8RB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6R-K2-RDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="BlueViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q9o-it-B6Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jhf-il-Uwc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LostPet" translatesAutoresizingMaskIntoConstraints="NO" id="ocs-NV-gcM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ocs-NV-gcM" secondAttribute="bottom" id="29f-dd-23i"/>
+                            <constraint firstAttribute="trailing" secondItem="ocs-NV-gcM" secondAttribute="trailing" id="7ve-mi-khI"/>
+                            <constraint firstItem="ocs-NV-gcM" firstAttribute="leading" secondItem="jhf-il-Uwc" secondAttribute="leading" id="Rh0-Gy-oJH"/>
+                            <constraint firstItem="ocs-NV-gcM" firstAttribute="top" secondItem="jhf-il-Uwc" secondAttribute="top" id="Y5T-lq-RjV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p2G-C9-sBa"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="673" y="207"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wv1-Kq-AL5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpq-mA-28c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="RedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lhf-mt-14f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E2G-br-EgK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purina" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-sG-kYY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZVf-sG-kYY" secondAttribute="bottom" id="I6f-1u-PSr"/>
+                            <constraint firstItem="ZVf-sG-kYY" firstAttribute="top" secondItem="E2G-br-EgK" secondAttribute="top" id="MjG-0V-glt"/>
+                            <constraint firstItem="ZVf-sG-kYY" firstAttribute="leading" secondItem="E2G-br-EgK" secondAttribute="leading" id="O6X-eP-tM2"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVf-sG-kYY" secondAttribute="trailing" id="obk-N7-zIb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZVK-wy-fp8"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="672.79999999999995" y="891.90404797601207"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="K9" width="2464" height="1640"/>
+        <image name="LostPet" width="2553" height="1704"/>
+        <image name="Purina" width="600" height="396"/>
+    </resources>
+</document>

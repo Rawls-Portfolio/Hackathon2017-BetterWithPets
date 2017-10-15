@@ -11,16 +11,24 @@ import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
 
+protocol LoginViewDelegate: class {
+    func showHome(user: String, sender: LoginViewController)
+}
+
 class LoginViewController: UIViewController {
     
     // MARK: - Properties
     var user: String?
+    var delegate: LoginViewDelegate?
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var tappableBackgroundView: UIView!
     @IBOutlet weak var fbLoginContainer: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - View Cycle Functions
     override func viewDidLoad() {
@@ -29,23 +37,20 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         configureTappableBackground()
         configureFacebookLogin()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
         
-        if let name = user, let navControl = segue.destination as? UINavigationController,
-            let vc = navControl.topViewController as? HomeViewController {
-            vc.model = UserModel(user: name)
-            nameTextField.text = ""
-            nameTextField.placeholder = "name"
-            passwordTextField.text = ""
-            passwordTextField.placeholder = "password"
-        }
+        view.backgroundColor = UIColor(hex: "231F20")// dark gray
+        passwordTextField.backgroundColor = UIColor(hex: "4D4D4D") // med gray
+        passwordTextField.textColor = UIColor(hex: "F7F7F7") // white
+        nameTextField.backgroundColor = UIColor(hex: "4D4D4D") // med gray
+        nameTextField.textColor = UIColor(hex: "F7F7F7") // white
+        loginButton.tintColor = UIColor(hex: "FFD300") // yellow
+        nameLabel.textColor = UIColor(hex: "F7F7F7") // white
+        passwordLabel.textColor = UIColor(hex: "F7F7F7") // white
     }
 
     // MARK: - IBActions
     @IBAction func LoginButtonPressed(_ sender: UIButton) {
+        print(#function)
         validateUser()
     }
     
@@ -76,7 +81,8 @@ class LoginViewController: UIViewController {
         tappableBackgroundView.isHidden = true
     }
     
-    func validateUser(){ // TODO
+    func validateUser(){
+        print(#function)
         if let name = nameTextField.text, let _ = passwordTextField.text {
             // validate user and password against database
             // if invalid, set (on screen, not popup, flash fields), return
@@ -89,12 +95,11 @@ class LoginViewController: UIViewController {
         } else {
             return
         }
+        delegate?.showHome(user: user ?? "", sender: self )
         
-        performSegue(withIdentifier: "ShowHome", sender: nil)
     }
     
 }
-
 
 // MARK: - UITextField Delegate Methods
 extension LoginViewController: UITextFieldDelegate {
@@ -119,4 +124,3 @@ extension LoginViewController: LoginButtonDelegate {
         // ensure user is completely logged out of the system
     }
 }
-

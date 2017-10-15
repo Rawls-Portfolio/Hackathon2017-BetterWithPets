@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1AQ-fw-foQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,81 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Landing View Controller-->
+        <scene sceneID="xW2-PB-aW0">
+            <objects>
+                <viewController id="1AQ-fw-foQ" customClass="LandingViewController" customModule="SmartNeighborhood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yJo-wN-y1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopBanner" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-ST-435">
+                                <rect key="frame" x="0.0" y="25" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-28-J9A" userLabel="CarouselContainer">
+                                <rect key="frame" x="0.0" y="158" width="375" height="205.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i53-V0-HSC">
+                                <rect key="frame" x="313" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped:" destination="1AQ-fw-foQ" eventType="touchUpInside" id="VQs-4A-tUr"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Fht-tb-2hg" userLabel="Caption">
+                                <rect key="frame" x="0.0" y="363.5" width="375" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qe5-Ny-CEw"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KX-o2-ZR6">
+                                <rect key="frame" x="0.0" y="463.5" width="375" height="203.5"/>
+                                <state key="normal" title="Go To Map"/>
+                                <connections>
+                                    <action selector="goToMapAction:" destination="1AQ-fw-foQ" eventType="touchUpInside" id="FLi-Gl-bsj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="centerY" secondItem="qKk-28-J9A" secondAttribute="bottom" constant="-20" id="46d-XR-40W"/>
+                            <constraint firstItem="qKk-28-J9A" firstAttribute="top" secondItem="Lh8-ST-435" secondAttribute="bottom" constant="5" id="7U3-8g-qvu"/>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="trailing" secondItem="Lh8-ST-435" secondAttribute="trailing" id="90e-0Y-L1C"/>
+                            <constraint firstItem="1KX-o2-ZR6" firstAttribute="top" secondItem="Fht-tb-2hg" secondAttribute="bottom" id="LmT-jL-tIQ"/>
+                            <constraint firstItem="1KX-o2-ZR6" firstAttribute="leading" secondItem="6vG-Xp-7cQ" secondAttribute="leading" id="czc-aa-8Pi"/>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="trailing" secondItem="Fht-tb-2hg" secondAttribute="trailing" id="f7k-mW-Bnp"/>
+                            <constraint firstItem="Fht-tb-2hg" firstAttribute="top" secondItem="qKk-28-J9A" secondAttribute="bottom" id="jbG-6h-faB"/>
+                            <constraint firstItem="Fht-tb-2hg" firstAttribute="leading" secondItem="6vG-Xp-7cQ" secondAttribute="leading" id="l5Q-V9-9Ya"/>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="bottom" secondItem="1KX-o2-ZR6" secondAttribute="bottom" id="m1Q-Vp-HPn"/>
+                            <constraint firstItem="qKk-28-J9A" firstAttribute="leading" secondItem="6vG-Xp-7cQ" secondAttribute="leading" id="smv-aJ-MP7"/>
+                            <constraint firstItem="Lh8-ST-435" firstAttribute="leading" secondItem="6vG-Xp-7cQ" secondAttribute="leading" id="v5F-IF-jO9"/>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="trailing" secondItem="1KX-o2-ZR6" secondAttribute="trailing" id="vSg-Ns-CeT"/>
+                            <constraint firstItem="6vG-Xp-7cQ" firstAttribute="trailing" secondItem="qKk-28-J9A" secondAttribute="trailing" id="wJn-PK-2ZI"/>
+                            <constraint firstItem="Lh8-ST-435" firstAttribute="top" secondItem="6vG-Xp-7cQ" secondAttribute="top" constant="5" id="xtG-JK-m9w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6vG-Xp-7cQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="caption" destination="Fht-tb-2hg" id="YcL-MF-9Kr"/>
+                        <outlet property="carouselContainer" destination="qKk-28-J9A" id="Yyb-uu-hUJ"/>
+                        <outlet property="loginButton" destination="i53-V0-HSC" id="bYc-Q6-bMA"/>
+                        <outlet property="mapLink" destination="1KX-o2-ZR6" id="Sof-FT-l2g"/>
+                        <outlet property="topBanner" destination="Lh8-ST-435" id="hbl-B3-bf1"/>
+                        <segue destination="hri-Ys-mjA" kind="show" identifier="ShowMapView" id="V20-cP-Kos"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowLogin" id="1LB-HR-5rd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gll-jV-XPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114.40000000000001" y="115.59220389805098"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -101,15 +176,17 @@
                     </view>
                     <connections>
                         <outlet property="fbLoginContainer" destination="hgy-mX-G1y" id="2mc-GL-gma"/>
+                        <outlet property="loginButton" destination="csT-EX-a2c" id="NU5-5b-rg0"/>
+                        <outlet property="nameLabel" destination="sNy-jJ-hgB" id="mJp-55-pGh"/>
                         <outlet property="nameTextField" destination="6KA-xg-Enn" id="pNS-8a-uis"/>
+                        <outlet property="passwordLabel" destination="fFu-hX-qHX" id="8Vc-a7-ccG"/>
                         <outlet property="passwordTextField" destination="MBq-lm-VrX" id="JWF-t9-JXu"/>
                         <outlet property="tappableBackgroundView" destination="QWw-tV-gO2" id="4Ss-Wt-DG0"/>
-                        <segue destination="hri-Ys-mjA" kind="show" identifier="ShowHome" id="K4L-Ma-aj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-114" y="921"/>
         </scene>
         <!--Community Unleashed-->
         <scene sceneID="vT2-Ef-07T">
@@ -222,12 +299,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POS-4d-nUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="117"/>
+            <point key="canvasLocation" x="924" y="116"/>
         </scene>
     </scenes>
     <resources>
         <image name="Activities" width="64" height="64"/>
         <image name="Alerts" width="64" height="64"/>
         <image name="Events" width="64" height="64"/>
+        <image name="TopBanner" width="282" height="128"/>
     </resources>
 </document>
