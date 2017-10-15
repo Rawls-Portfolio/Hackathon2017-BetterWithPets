@@ -65,6 +65,8 @@ class MarkerDetailViewController: UIViewController {
             endDatePicker.date = Date()
             isPrivateProperty.isOn = false
         }
+        
+        eventTypeControl.tintColor = UIColor(hex: "C7CD2D")
     }
     
     func configureTappableBackground() {
@@ -107,6 +109,18 @@ class MarkerDetailViewController: UIViewController {
     @IBAction func trashButtonPressed(_ sender: UIBarButtonItem) {
         delegate?.removeCurrent()
     }
+    
+    @IBAction private func madeSelection(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            sender.tintColor = UIColor(hex: "C7CD2D")
+        }
+        if sender.selectedSegmentIndex == 1{
+            sender.tintColor = UIColor(hex: "00A0DC")
+        }
+        if sender.selectedSegmentIndex == 2 {
+            sender.tintColor = UIColor(hex: "9652CC")
+        }
+    }
 }
 
 // MARK: - Text Field and Text View Delegate Functions
@@ -139,4 +153,23 @@ extension MarkerDetailViewController: UITextFieldDelegate, UITextViewDelegate{
 
 }
 
-
+extension UIColor {
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.scanLocation = 0
+        
+        var rgbValue: UInt64 = 0
+        
+        scanner.scanHexInt64(&rgbValue)
+        
+        let r = (rgbValue & 0xff0000) >> 16
+        let g = (rgbValue & 0xff00) >> 8
+        let b = rgbValue & 0xff
+        
+        self.init(
+            red: CGFloat(r) / 0xff,
+            green: CGFloat(g) / 0xff,
+            blue: CGFloat(b) / 0xff, alpha: 1
+        )
+    }
+}

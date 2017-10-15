@@ -47,6 +47,13 @@ class MapsViewController: UIViewController {
     
     // MARK:- Methods
     fileprivate func dropMarkerWith(_ model: MarkerModel) {
+        
+        switch(model.eventType){
+        case .activity: model.eventIcon = #imageLiteral(resourceName: "Activities")
+        case .hotspot: model.eventIcon = #imageLiteral(resourceName: "Events")
+        case .alert: model.eventIcon = #imageLiteral(resourceName: "Alerts")
+        }
+        
         let newMarker = CustomMarker(model: model)
         newMarker.map = mapView
         delegate?.save(model)

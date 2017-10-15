@@ -19,7 +19,9 @@ class CustomMarker: GMSMarker {
         let longitude = model.coordinate.longitude
         let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         self.position = position
-        self.title = model.title
-        self.isFlat = true
+        
+        if let icon = model.eventIcon {
+            self.icon = icon
+        }
     }
 }

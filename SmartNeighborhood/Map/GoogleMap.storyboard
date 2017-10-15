@@ -66,14 +66,18 @@
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cOy-gO-F6u">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="sjh-3T-4Rc"/>
                                                 </constraints>
                                                 <segments>
                                                     <segment title="Activity"/>
-                                                    <segment title="Hotspot"/>
+                                                    <segment title="Event"/>
                                                     <segment title="Alert"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="madeSelection:" destination="wSb-7a-Hqp" eventType="valueChanged" id="WMq-lP-j2u"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -122,7 +126,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="zRD-jM-LrG" userLabel="StartDate">
-                                                <rect key="frame" x="0.0" y="29" width="375" height="100"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="375" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="bmZ-rQ-9D7"/>
                                                 </constraints>

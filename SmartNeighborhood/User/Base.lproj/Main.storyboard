@@ -120,16 +120,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBL-VD-9Ta" userLabel="MapContainer">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QBg-jI-lGF">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="rLy-4s-R2y">
+                                        <rect key="frame" x="0.0" y="0.0" width="119.5" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Activities" translatesAutoresizingMaskIntoConstraints="NO" id="RaO-cT-I8F">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="60.5"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qI-wq-dxq">
+                                                <rect key="frame" x="0.0" y="60.5" width="119.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="kEQ-wA-c4Q">
+                                        <rect key="frame" x="127.5" y="0.0" width="120" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Events" translatesAutoresizingMaskIntoConstraints="NO" id="efF-qe-NEE">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="60.5"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-vZ-H8a">
+                                                <rect key="frame" x="0.0" y="60.5" width="120" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="U0p-cR-Bzc">
+                                        <rect key="frame" x="255.5" y="0.0" width="119.5" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alerts" translatesAutoresizingMaskIntoConstraints="NO" id="uaG-T5-tWB">
+                                                <rect key="frame" x="0.0" y="0.0" width="119.5" height="60.5"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8e-2P-YD2">
+                                                <rect key="frame" x="0.0" y="60.5" width="119.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="b71-Rl-a9b"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eBL-VD-9Ta" firstAttribute="trailing" secondItem="qYw-N9-u74" secondAttribute="trailing" id="72k-vB-3Da"/>
+                            <constraint firstItem="QBg-jI-lGF" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="Iy8-bE-GtV"/>
+                            <constraint firstItem="qYw-N9-u74" firstAttribute="trailing" secondItem="QBg-jI-lGF" secondAttribute="trailing" id="a4g-C3-0EZ"/>
                             <constraint firstItem="eBL-VD-9Ta" firstAttribute="top" secondItem="qYw-N9-u74" secondAttribute="top" id="aqk-Ia-481"/>
-                            <constraint firstItem="qYw-N9-u74" firstAttribute="bottom" secondItem="eBL-VD-9Ta" secondAttribute="bottom" id="jGb-YL-tI4"/>
                             <constraint firstItem="eBL-VD-9Ta" firstAttribute="leading" secondItem="qYw-N9-u74" secondAttribute="leading" id="lQa-Ri-2hn"/>
+                            <constraint firstAttribute="bottom" secondItem="QBg-jI-lGF" secondAttribute="bottom" id="v64-H8-iXZ"/>
+                            <constraint firstItem="QBg-jI-lGF" firstAttribute="top" secondItem="eBL-VD-9Ta" secondAttribute="bottom" constant="5" id="vdt-7b-Nw4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qYw-N9-u74"/>
                     </view>
@@ -172,4 +225,9 @@
             <point key="canvasLocation" x="1042" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activities" width="64" height="64"/>
+        <image name="Alerts" width="64" height="64"/>
+        <image name="Events" width="64" height="64"/>
+    </resources>
 </document>
