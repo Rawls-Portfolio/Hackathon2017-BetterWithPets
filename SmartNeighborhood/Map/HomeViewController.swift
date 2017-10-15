@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = UIColor(hex: "231F20")// dark gray
         alertsLabel.textColor = UIColor(hex: "F7F7F7") // white
+        alertsLabel.text = "Alerts"
         eventsLabel.textColor = UIColor(hex: "F7F7F7") // white
         activitiesLabel.textColor = UIColor(hex: "F7F7F7") // white
         logoutButton.tintColor = UIColor(hex: "FFD300") // yellow

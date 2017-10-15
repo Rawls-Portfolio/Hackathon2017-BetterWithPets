@@ -20,6 +20,10 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var mapLink: UIButton!
     @IBOutlet weak var topBanner: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var storiesButton: UIButton!
+    @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var futureButton: UIButton!
     
     // MARK:- View Cycle Methods
     override func viewDidLoad() {
@@ -29,7 +33,11 @@ class LandingViewController: UIViewController {
         view.backgroundColor = UIColor(hex: "231F20")// dark gray
         topBanner.backgroundColor = UIColor(hex: "4D4D4D") // med gray
         caption.textColor = UIColor(hex: "F7F7F7") // white
+        
         loginButton.tintColor = UIColor(hex: "FFD300") // yellow
+        storiesButton.tintColor = UIColor(hex: "FFD300") // yellow
+        connectButton.tintColor = UIColor(hex: "FFD300") // yellow
+        futureButton.tintColor = UIColor(hex: "FFD300") // yellow
         mapLink.tintColor = UIColor(hex: "FFD300") // yellow
         
     }
@@ -102,10 +110,12 @@ extension LandingViewController: LoginViewDelegate {
     func showHome(user: String, sender: LoginViewController) {
         if user.isEmpty {
             isLoggedIn = false
+            profileImage.image = #imageLiteral(resourceName: "Login_Default")
             loginButton.isHidden = isLoggedIn
         } else {
             self.user = user
             isLoggedIn = true
+            profileImage.image = #imageLiteral(resourceName: "Login_Brett")
             loginButton.isHidden = isLoggedIn
         }
         sender.dismiss(animated: true, completion: nil)
@@ -121,6 +131,7 @@ extension LandingViewController: LoginViewDelegate {
 extension LandingViewController: HomeViewDelegate {
     func logout() {
         isLoggedIn = false
+        profileImage.image = #imageLiteral(resourceName: "Login_Default")
         loginButton.isHidden = isLoggedIn
     }
 }

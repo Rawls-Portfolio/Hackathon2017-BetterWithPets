@@ -1,37 +1,24 @@
-[
- 
- {
- "featureType": "landscape",
- "stylers": [
-             { "color": "#4D4D4D" }
-             ]
- },
- 
- {
- "featureType": "poi",
- "stylers": [
-             { "visibility": "off" }
-             ]
- },
- 
- {
- "featureType": "road.highway",
- "stylers": [
-             { "visibility": "off" }
-             ]
- },
- 
- {
- "featureType": "road",
- "stylers": [
-             { "color": "#FFD300" }
-             ]
- },
- 
- {
- "featureType": "water",
- "stylers": [
-             { "color": "#F7F7F7" }
-             ]
- }
- ]
+ [
+  
+  {
+  "featureType": "landscape",
+  "stylers": [
+              { "color": "#4D4D4D " }
+              ]
+  },
+  
+  {
+  "featureType": "poi",
+  "stylers": [
+              { "visibility": "off" }
+              ]
+  },
+  
+  {
+  "featureType": "road.highway",
+  "stylers": [
+              { "visibility": "off" }
+              ]
+  },
+  
+  ]

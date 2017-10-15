@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var profileImage: UIImageView!
     
     // MARK: - View Cycle Functions
     override func viewDidLoad() {
@@ -46,6 +47,9 @@ class LoginViewController: UIViewController {
         loginButton.tintColor = UIColor(hex: "FFD300") // yellow
         nameLabel.textColor = UIColor(hex: "F7F7F7") // white
         passwordLabel.textColor = UIColor(hex: "F7F7F7") // white
+        
+        view.bringSubview(toFront: profileImage)
+        profileImage.isHidden = false
     }
 
     // MARK: - IBActions
