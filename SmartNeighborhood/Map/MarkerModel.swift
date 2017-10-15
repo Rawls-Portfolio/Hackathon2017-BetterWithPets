@@ -9,35 +9,43 @@
 import Foundation
 import GoogleMaps
 
-enum  LocationType {
-    case publicProperty, privateProperty
-}
-
 // activity: small event
 // hotspot: larger event
 // alert: found/lost
 enum EventType {
     case activity, hotspot, alert
+    
+    static func controlConversion(_ type: Int) -> EventType{
+        switch(type){
+        case 0: return .activity
+        case 1: return .hotspot
+        case 2: return .alert
+        default: return .activity
+        }
+    }
 }
 
 class MarkerModel {
     var title: String?
-    var typeOfLocation: LocationType
+    var isPrivateProperty: Bool
     var eventType: EventType
-    var eventIcon: UIImage
+    var eventDesc: String?
+    var eventIcon: UIImage?
     var coordinate: CLLocationCoordinate2D
     var startTime: Date
-    var duration: TimeInterval? //if not defined time is indefinite
+    var endingTime: Date //if not defined time is indefinite
     var hostName: String
-    var hostImage: UIImage
+    var hostImage: UIImage?
     
-    init(title: String?, locationType: LocationType, eventType: EventType, eventIcon: UIImage, coordinates: CLLocationCoordinate2D, startTime: Date, duration: TimeInterval?, hostName: String, hostImage: UIImage){
-        self.typeOfLocation = locationType
+    init(title: String?, isPrivateProperty: Bool, eventType: EventType, eventDesc: String?, eventIcon: UIImage?, coordinates: CLLocationCoordinate2D, startTime: Date, endingTime: Date, hostName: String, hostImage: UIImage?){
+        self.title = title
+        self.isPrivateProperty = isPrivateProperty
         self.eventType = eventType
         self.eventIcon = eventIcon
+        self.eventDesc = eventDesc
         self.coordinate = coordinates
         self.startTime = startTime
-        self.duration = duration
+        self.endingTime = endingTime
         self.hostName = hostName
         self.hostImage = hostImage
     }
@@ -45,13 +53,14 @@ class MarkerModel {
 
 extension MarkerModel: Equatable {
     static func ==(lhs: MarkerModel, rhs: MarkerModel) -> Bool {
-        return lhs.typeOfLocation == rhs.typeOfLocation &&
+        return lhs.isPrivateProperty == rhs.isPrivateProperty &&
             lhs.startTime == rhs.startTime &&
             lhs.hostName == rhs.hostName &&
             lhs.hostImage == rhs.hostImage &&
+            lhs.eventDesc == rhs.eventDesc &&
             lhs.eventType == rhs.eventType &&
             lhs.eventIcon == rhs.eventIcon &&
-            lhs.duration == rhs.duration &&
+            lhs.endingTime == rhs.endingTime &&
             lhs.coordinate == rhs.coordinate
     }
 }

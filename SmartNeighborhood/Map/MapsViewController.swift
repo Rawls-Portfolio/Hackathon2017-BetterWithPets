@@ -34,11 +34,15 @@ class MapsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard let markerWithModel = sender as? CustomMarker,
-            let navControl = segue.destination as? UINavigationController,
+        guard let navControl = segue.destination as? UINavigationController,
             let vc = navControl.topViewController as? MarkerDetailViewController else { return }
-            vc.delegate = self
-            vc.model = markerWithModel.model
+        vc.delegate = self
+        
+        if let markermodel = sender as? MarkerModel {
+            vc.model = markermodel
+        } else if let coordinates = sender as? CLLocationCoordinate2D{
+            vc.coordinates = coordinates
+        }
     }
     
     // MARK:- Methods
@@ -47,14 +51,19 @@ class MapsViewController: UIViewController {
         newMarker.map = mapView
         delegate?.save(model)
     }
+    
+    fileprivate func removeCurrentMarker(){
+        // TODO: remove current marker
+    }
 }
 
 // MARK:- GMSMapView Delegate Methods
 extension MapsViewController: GMSMapViewDelegate {
     // new marker
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        print(#function)
         currentModel = nil
-        performSegue(withIdentifier: "ShowMarkerDetail", sender: nil)
+        performSegue(withIdentifier: "ShowMarkerDetail", sender: coordinate)
     }
     
     // edit marker
@@ -73,10 +82,14 @@ extension MapsViewController: MarkerDetailViewDelegate {
         if currentModel == nil {
             dropMarkerWith(model)
         } else if model != currentModel {
-                //TODO: remove current marker
-                //dropMarkerWith(model)
+                removeCurrentMarker()
+                dropMarkerWith(model)
         } // else no change
-        
-        
+    }
+    
+    func removeCurrent() {
+        if currentModel != nil {
+            removeCurrentMarker()
+        }
     }
 }
